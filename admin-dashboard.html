@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Fashion Collection</h2>
+
+        <ul>
+            <li>Dashboard</li>
+            <li>Add Product</li>
+            <li>Manage Products</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <h1>Add New Product</h1>
+
+        <form id="productForm">
+
+            <!-- Product Name -->
+            <input
+                type="text"
+                id="productName"
+                placeholder="Product Name"
+                required>
+
+            <!-- Product Price -->
+            <input
+                type="number"
+                id="productPrice"
+                placeholder="Product Price"
+                min="1"
+                required>
+
+            <!-- Category -->
+            <select
+                id="category"
+                required>
+
+                <option value="">Select Category</option>
+
+                <option value="Girls (5-12)">
+                    Girls (5-12)
+                </option>
+
+                <option value="Teen Girls">
+                    Teen Girls
+                </option>
+
+                <option value="Young Women">
+                    Young Women
+                </option>
+
+                <option value="Women 35+">
+                    Women 35+
+                </option>
+
+                <option value="Boys (5-12)">
+                    Boys (5-12)
+                </option>
+
+                <option value="Teen Boys">
+                    Teen Boys
+                </option>
+
+                <option value="Young Men">
+                    Young Men
+                </option>
+
+                <option value="Men 35+">
+                    Men 35+
+                </option>
+
+            </select>
+
+            <!-- Description -->
+            <textarea
+                id="description"
+                rows="5"
+                placeholder="Product Description"
+                required>
+            </textarea>
+
+            <!-- Product Image -->
+            <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                required>
+
+            <!-- Button -->
+            <button type="submit">
+                Add Product
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "admin-login.html";
+}
+</script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Women Collection (20-35 Years)</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Fashion Collection</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="collection-page">
+
+    <h1>Young Women Collection (20-35 Years)</h1>
+
+    <p class="collection-intro">
+        Explore our premium collection for young women featuring modern fashion,
+        office wear, party wear, ethnic wear, casual outfits and seasonal trends.
+        Designed for comfort, elegance and confidence.
+    </p>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/y_1.jpeg" alt="">
+            <div class="product-info">
+                <h3>Office Wear Kurti</h3>
+                <p>Elegant office wear kurti for daily professional use.</p>
+                <p class="price">₹1199</p>
+                <a href="https://wa.me/916287122768?text= I Want to order office were Kurti " class="btn">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/y_2.jpeg" alt="">
+            <div class="product-info">
+                <h3>Party Wear Gown</h3>
+                <p>Premium party wear gown with stylish design.</p>
+                <p class="price">₹2499</p>
+                <a href="https://wa.me/916287122768?text= I want to order Premium Party wear gown with stylish design " class="btn">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/y_3.jpeg" alt="">
+            <div class="product-info">
+                <h3>Casual Top & Jeans</h3>
+                <p>Modern casual outfit perfect for outings.</p>
+                <p class="price">₹1499</p>
+                <a href="https://wa.me/916287122768?text= I want to Order Modern Casual outfit perfect for outings" class="btn">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/y_4.jpeg" alt="">
+            <div class="product-info">
+                <h3>Designer Saree</h3>
+                <p>Beautiful designer saree for festival occasions.</p>
+                <p class="price">₹2999</p>
+                <a href="https://wa.me/916287122768?text= I want to order Beautiful designer saree for festival occasions" class="btn">
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="product-grid" id="dynamicProducts"></div>
+        <script>
+async function loadProducts() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:5000/api/products/category/Young%20Women"
+        );
+
+        const products = await response.json();
+
+        let html = "";
+
+        products.forEach(product => {
+
+            html += `
+            <div class="product-card">
+
+                <img
+                    src="http://localhost:5000/uploads/${product.image}"
+                    alt="${product.name}"
+                >
+
+                <div class="product-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.description}</p>
+
+                    <p class="price">₹${product.price}</p>
+
+                    <a
+                        href="https://wa.me/916287122768?text=I want to order ${product.name}"
+                        class="btn">
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+            `;
+        });
+
+        document.getElementById("dynamicProducts").innerHTML = html;
+
+    } catch(error) {
+
+        console.log(error);
+    }
+}
+
+loadProducts();
+</script>
+    </div>
+
+</section>
+    
+<footer>
+    <p>© 2026 Fashion Collection | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+```

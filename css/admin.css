@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-container{
+    width:400px;
+    max-width:90%;
+    background:#fff;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.login-container h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.login-container input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+
+.login-container input:focus{
+    outline:none;
+    border-color:#111;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:#111;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.login-btn:hover{
+    background:#333;
+}
+
+.forgot{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    text-decoration:none;
+    color:#007bff;
+}
+
+.forgot:hover{
+    text-decoration:underline;
+}
+
+.error{
+    color:red;
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+
+
+/* dashboard */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#98a3b4;
+}
+
+/* Dashboard Layout */
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:270px;
+    background:linear-gradient(180deg,#111,#222);
+    color:#e3e7e4cc;
+    padding:30px 20px;
+    position:fixed;
+    height:100vh;
+    left:0;
+    top:0;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:28px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    padding:15px 20px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar ul li:hover{
+    background:#ff4d4d;
+}
+
+/* Main Content */
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    padding:40px;
+}
+
+.main-content h1{
+    margin-bottom:25px;
+    color:#6f4cb0;
+}
+
+/* Form Card */
+
+#productForm{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom:40px;
+}
+
+#productForm input,
+#productForm select,
+#productForm textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+#productForm textarea{
+    resize:none;
+}
+
+#productForm button{
+    width:100%;
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+#productForm button:hover{
+    background:#ff4d4d;
+}
+
+/* Product List */
+
+#productList{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+#productList h2{
+    margin-bottom:20px;
+}
+
+.product-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+.product-card img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.product-info{
+    flex:1;
+    margin-left:20px;
+}
+
+.product-info h3{
+    margin-bottom:5px;
+}
+
+.product-actions button{
+    border:none;
+    padding:10px 15px;
+    margin-left:10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.edit-btn{
+    background:#28a745;
+    color:white;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main-content{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+}

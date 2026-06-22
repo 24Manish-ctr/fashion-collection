@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women Collection (35+ Years)</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Fashion Collection</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="collection-page">
+
+    <h1>Women's Collection (35+ Years)</h1>
+
+    <p class="collection-intro">
+        Discover elegant and comfortable clothing designed for women aged 35 years and above.
+        Our collection includes sarees, kurtis, salwar suits, ethnic wear, daily wear and
+        festive outfits that combine tradition with modern style.
+    </p>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="images/w-1.jpeg" alt="">
+            <div class="product-info">
+                <h3>Designer Saree</h3>
+                <p>Elegant saree suitable for festivals and family functions.</p>
+                <p class="price">₹2499</p>
+                <a href="https://wa.me/916287122768?text= I want to order Designer Saree " class="btn">Order on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/w-2.jpeg" alt="">
+            <div class="product-info">
+                <h3>Traditional Salwar Suit</h3>
+                <p>Comfortable and stylish traditional outfit.</p>
+                <p class="price">₹1899</p>
+                <a href="https://wa.me/916287122768?text= I want to order Traditional Salwar Suit" class="btn">Order on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/w-3.jpeg" alt="">
+            <div class="product-info">
+                <h3>Printed Kurti</h3>
+                <p>Premium cotton kurti for daily wear.</p>
+                <p class="price">₹999</p>
+                <a href="https://wa.me/916287122768?text= I want to order Printed Kurti" class="btn">Order on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/w-4.jpeg" alt="">
+            <div class="product-info">
+                <h3>Festive Wear Collection</h3>
+                <p>Beautiful outfit collection for celebrations and events.</p>
+                <p class="price">₹2999</p>
+                <a href="https://wa.me/916287122768?text= I want to order Festive Wear Collection " class="btn">Order on WhatsApp</a>
+            </div>
+        </div>
+       
+            <!-- Static Products ke baad ye add karo -->
+
+<div class="product-grid" id="dynamicProducts"></div>
+
+<script>
+async function loadProducts() {
+
+    try {
+        const response = await fetch(
+            "http://localhost:5000/api/products/category/Women%2035%2B"
+        );
+
+        const products = await response.json();
+
+        let html = "";
+
+        products.forEach(product => {
+
+            html += `
+            <div class="product-card">
+
+                <img
+                    src="http://localhost:5000/uploads/${product.image}"
+                    alt="${product.name}"
+                >
+
+                <div class="product-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>${product.description}</p>
+
+                    <p class="price">₹${product.price}</p>
+
+                    <a
+                        href="https://wa.me/916287122768?text=I want to order ${product.name}"
+                        class="btn">
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+            `;
+        });
+
+        document.getElementById("dynamicProducts").innerHTML = html;
+
+    } catch (error) {
+
+        console.log(error);
+    }
+}
+
+loadProducts();
+</script>
+
+    </div>
+</section>
+
+
+
+<footer>
+    <p>© 2026 Fashion Collection | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
